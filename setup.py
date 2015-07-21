@@ -1,10 +1,7 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 import sys, os
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README.rst')).read()
-NEWS = open(os.path.join(here, 'NEWS.txt')).read()
-
 
 __version__ = '3.2'
 
@@ -15,6 +12,7 @@ install_requires = [
     'Numpy',
     'requests',
     'Webob',
+    'httplib2',
 ]
 
 docs_extras = [
@@ -36,7 +34,7 @@ testing_extras = tests_require + [
 setup(name='Pydap',
     version=__version__,
     description="An implementation of the Data Access Protocol.",
-    long_description=README + '\n\n' + NEWS,
+    long_description="",
     classifiers=[
       # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     ],
@@ -45,8 +43,7 @@ setup(name='Pydap',
     author_email='roberto@dealmeida.net',
     url='http://pydap.org/',
     license='MIT',
-    packages=find_packages('src'),
-    package_dir = {'': 'src'},
+    packages=['pydap', 'pydap.util', 'pydap.parsers'],
     include_package_data=True,
     zip_safe=False,
     install_requires=install_requires,
