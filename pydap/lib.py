@@ -31,6 +31,9 @@ TIMEOUT = None
 # >>> pydap.lib.PROXY = httplib2.ProxyInfo(pydap.util.socks.PROXY_TYPE_HTTP, 'localhost', 8000)
 PROXY = None
 
+# A filename of a certificate file to use for HTTPS requests
+# in stead of the one provided by httplib2
+CA_CERTS = None
 
 def isiterable(obj):
     """
